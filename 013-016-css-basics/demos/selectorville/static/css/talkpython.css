@@ -1,0 +1,26 @@
+.header_content li {
+    vertical-align: middle;
+    display: inline-block;
+    /* list items horizontal, padding 5 & 10 */
+    padding: 5px;
+    padding-right: 10px;
+}
+
+.header_content li a:hover {
+    text: yellow;
+}
+
+.header_content {
+    background-color: #222222
+}
+
+.header_content li a{
+    color:grey;
+    text-decoration: None;
+}
+
+.header_content li img {
+    vertical-align: middle;
+    height:10%;
+    width:10%;
+}
