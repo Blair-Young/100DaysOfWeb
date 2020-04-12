@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<h1> Get a list of pokemon based on their colour </h1>
+<div>
+	<form class="mui-form" method="POST" action='/pokemon' style="text-align: center;">
+	<label for="pokecolour">Pokemon colour</label>
+	<input type="text" class="form-control" id="pokecolour" name="pokecolour" placeholder="color">
+	<button type="submit" class="mui-btn mui-btn-raised" value="submit">Search</button>
+	</form>
+</div>
+{% endblock %}
