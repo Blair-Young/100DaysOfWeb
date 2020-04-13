@@ -7,4 +7,43 @@
 	<button type="submit" class="mui-btn mui-btn-raised" value="submit">Search</button>
 	</form>
 </div>
+<br>
+<br>
+
+<div>
+        {% if pokemon %}
+	    <table class="mui-table mui-table--bordered">
+	        <thead>
+		    <tr>
+		        <th>Pokemon</th>
+		    </tr>
+			</thead>
+	        <tbody>
+		    {% for i in pokemon %}
+		        <tr>
+			    <td>{{ i }}</td>
+			</tr>
+		    {% endfor %}
+		</tbody>
+	    </table>
+		{% endif %}
+    </div>
+<div>
+	{% if pokemon %}
+	<table class="mui-table mui-table--bordered">
+		<thead>
+		<tr>
+			<th>Pokemon</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for i in pokemon %}
+			<tr>
+				<td>{{ i }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	{% endif %}
+</div>
 {% endblock %}
