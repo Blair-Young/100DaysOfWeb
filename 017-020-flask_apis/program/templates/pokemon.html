@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 <h1> Get a list of pokemon based on their colour </h1>
 <div>
 	<form class="mui-form" method="POST" action='/pokemon' style="text-align: center;">
@@ -6,44 +7,41 @@
 	<input type="text" class="form-control" id="pokecolour" name="pokecolour" placeholder="color">
 	<button type="submit" class="mui-btn mui-btn-raised" value="submit">Search</button>
 	</form>
+	<form class="mui-form" method="POST" action='/pokemon' style="text-align: center;">
+		<label for="pokename">Pokemon name</label>
+		<input type="text" class="form-control" id="pokename" name="pokename" placeholder="name">
+		<button type="submit" class="mui-btn mui-btn-raised" value="submit">Search</button>
+	</form>
 </div>
 <br>
 <br>
 
 <div>
-        {% if pokemon %}
-	    <table class="mui-table mui-table--bordered">
-	        <thead>
-		    <tr>
-		        <th>Pokemon</th>
-		    </tr>
-			</thead>
+    {% if pokemon %}
+	<table class="mui-table mui-table--bordered">
+        <thead>
+	    <tr>
+	        <th>Pokemon</th>
+	    </tr>
+		</thead>
 	        <tbody>
 		    {% for i in pokemon %}
 		        <tr>
 			    <td>{{ i }}</td>
 			</tr>
-		    {% endfor %}
+	    {% endfor %}
 		</tbody>
-	    </table>
-		{% endif %}
-    </div>
-<div>
-	{% if pokemon %}
-	<table class="mui-table mui-table--bordered">
-		<thead>
-		<tr>
-			<th>Pokemon</th>
-		</tr>
-		</thead>
-		<tbody>
-		{% for i in pokemon %}
-			<tr>
-				<td>{{ i }}</td>
-			</tr>
-		{% endfor %}
-		</tbody>
-	</table>
+    </table>
 	{% endif %}
 </div>
+<p>
+	{% if error %}
+	No pokemon with that colour
+	{% endif %}
+</p>
+<p>
+	{% if coolpoke %}
+	{{ coolpoke }}
+	{% endif %}
+
 {% endblock %}
