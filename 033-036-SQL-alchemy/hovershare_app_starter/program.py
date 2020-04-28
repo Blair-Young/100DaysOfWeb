@@ -3,6 +3,8 @@ import sys
 from typing import List
 from infrastructure.numbers import try_int
 from infrastructure.switchlang import switch
+from data import session_factory
+
 
 
 user = None
@@ -26,7 +28,8 @@ def main():
 
 
 def setup_db():
-    pass
+    session_factory.global_init('hover_share.sqlite')
+    session_factory.create_tables()
     # todo setup the setup_db
     # 1. initialize the connection / engine
     # 2. create the tables
